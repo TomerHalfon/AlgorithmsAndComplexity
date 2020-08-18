@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lesson", "Lesson", "{90774D20-BD78-40CA-8468-82BBCB032C09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComplexityExamp", "Lesson\ComplexityExamp\ComplexityExamp.csproj", "{A0A8D217-F8BE-4981-A5E3-C38B3F104D17}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A0A8D217-F8BE-4981-A5E3-C38B3F104D17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0A8D217-F8BE-4981-A5E3-C38B3F104D17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0A8D217-F8BE-4981-A5E3-C38B3F104D17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0A8D217-F8BE-4981-A5E3-C38B3F104D17}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A0A8D217-F8BE-4981-A5E3-C38B3F104D17} = {90774D20-BD78-40CA-8468-82BBCB032C09}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E4C3B6F8-70E1-41A4-8754-771E37806A5C}
+	EndGlobalSection
+EndGlobal
