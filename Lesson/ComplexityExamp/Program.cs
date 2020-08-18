@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ComplexityExamp
 {
@@ -18,19 +15,18 @@ namespace ComplexityExamp
             }
             return (double)sum / array.Length;
         }
-
         //O(n²) Examp
-        static void BubbleSort(int[] array)
+        static void BubbleSort<T>(IList<T> collection) where T : IComparable<T>
         {
-            for (int i = array.Length - 1; i > 0; i--)
+            for (int i = collection.Count - 1; i > 0; i--)
             {
                 for (int j = 0; j < i; j++)
                 {
-                    if (array[j] > array[j + 1])
+                    if (collection[j].CompareTo(collection[j + 1]) > 0)
                     {
-                        int temp = array[j];
-                        array[j] = array[j + 1];
-                        array[j + 1] = temp;
+                        T temp = collection[j];
+                        collection[j] = collection[j + 1];
+                        collection[j + 1] = temp;
                     }
                 }
             }
@@ -38,42 +34,76 @@ namespace ComplexityExamp
         //O(√n) Examp
         static bool IsPrime(int num)
         {
-            if (num == 1)
-            {
-                return false;
-            }
-            for (int i = 2; i < num; i++)
+            for (int i = 2; i <= (int)Math.Sqrt(num); i++)
             {
                 if (num % i == 0)
                     return false;
             }
             return true;
         }
+        //O(log(n)) Examp
+        static bool BinarySerch<T>(IList<T> collection, T serchKey, out int index) where T : IComparable<T>
+        {
+            int low = 0;
+            int high = collection.Count - 1;
+            int middle;
+            while (low <= high)
+            {
+                middle = (low + high) / 2;
+                if (collection[middle].Equals(serchKey))
+                {
+                    index = middle;
+                    return true;
+                }
+                if (collection[middle].CompareTo(serchKey) > 0)
+                {
+                    high = middle - 1;
+                }
+                else
+                {
+                    low = middle + 1;
+                }
+            }
+            index = -1;
+            return false;
+        }
+
         static void Main()
         {
-            int[] array = { 4, 5, 2, 34, 7, 5, 9, 3, 5 };
-            Console.WriteLine($"==========================");
-            Print(array);
+            int[] array = { 4, 5, 2, 34, 7, 99, 9, 3, 46 };
 
             Console.WriteLine($"==========================");
+            Print(array);
+            Console.WriteLine($"==========================");
+
             Console.WriteLine($"\nO(n) Examp => Calculate average: {GetAverage(array)}\n");
 
             BubbleSort(array);
             Console.Write($"O(n²) Examp => BubbleSort:\t");
             Print(array);
-
             Console.WriteLine();
+
             foreach (int num in array)
             {
                 Console.WriteLine($"O(√n) Examp => Check if {num} is a prime numeber, {IsPrime(num)}");
             }
+
+            int serchKey = 5;
+            if (BinarySerch(array, serchKey, out int resIndex))
+            {
+                Console.WriteLine($"\nO(log(n)) Examp => Binery Serch. Serch key: {serchKey} -> index: {resIndex}");
+            }
+            else
+            {
+                Console.WriteLine($"The serch key {serchKey} is not in the array");
+            }
         }
 
-        static void Print(int [] array)
+        static void Print<T>(IList<T> collection)
         {
-            foreach (int num in array)
+            foreach (T item in collection)
             {
-                Console.Write($"{num} ");
+                Console.Write($"{item} ");
             }
             Console.WriteLine();
         }
