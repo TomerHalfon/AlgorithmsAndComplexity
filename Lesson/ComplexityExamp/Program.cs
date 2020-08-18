@@ -76,10 +76,10 @@ namespace ComplexityExamp
             Print(array);
             Console.WriteLine($"==========================");
 
-            Console.WriteLine($"\nO(n) Examp => Calculate average: {GetAverage(array)}\n");
+            Console.WriteLine($"\nO(n) Examp => Calculate average: {GetAverage(array):0.00}\n");
 
             BubbleSort(array);
-            Console.Write($"O(n²) Examp => BubbleSort:\t");
+            Console.Write($"O(n²) Examp => BubbleSort:  ");
             Print(array);
             Console.WriteLine();
 
