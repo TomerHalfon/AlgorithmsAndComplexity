@@ -10,11 +10,17 @@ namespace RecursionExercises
     {
         //Q1
         //Check for Polindrom
+        //This is a solution that will send a new string every time. this is heavy on the system.
         public static bool Palindrome(string str)
         {
-            if (str.Length <= 1) return true;
-            return str[0].Equals(str[str.Length - 1]) && Palindrome(str.Substring(1, str.Length - 2));
+            return (str.Length <= 1) || str[0].Equals(str[str.Length - 1]) && Palindrome(str.Substring(1, str.Length - 2));
         }
+        //if you send an index you can leave the string as it is, and lower the demand on memory
+        public static bool Palindrome(string str, int index)
+        {
+            return (index >= str.Length / 2) || str[index].Equals(str[str.Length - index - 1]) && Palindrome(str, index + 1);
+        }
+
         //Q2
         //Check for Prime Number
         public static bool IsPrime(int num, int divider = 2)
@@ -33,9 +39,10 @@ namespace RecursionExercises
         }
         //Q4
         //Find Min In Array
-        public static int FindMin(int[] array, int pos)
+        //loops through from the end to the start
+        public static int FindMin(int[] array, int index)
         {
-            return pos == 1 ? array[0] : Math.Min(array[pos - 1], FindMin(array, pos - 1));
+            return index <= 0 ? array[index] : Math.Min(array[index - 1], FindMin(array, index - 1));
         }
         //Q5
         //Find Appearances

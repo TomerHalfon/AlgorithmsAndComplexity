@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SortsExamp
 {
-    class Sorts
+    public class Sorts
     {
         /* Bubble sort is of O(n²) complexity.
          * ====================================
