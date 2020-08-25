@@ -31,12 +31,14 @@ namespace RecursionExercises
 
             return IsPrime(num, ++divider);
         }
+
         //Q3
         //return Sum of digits
         public static int GetSumOfDigits(int num)
         {
             return num <= 0 ? 0 : num % 10 + GetSumOfDigits(num / 10);
         }
+
         //Q4
         //Find Min In Array
         //loops through from the end to the start
@@ -44,6 +46,14 @@ namespace RecursionExercises
         {
             return index <= 0 ? array[index] : Math.Min(array[index - 1], FindMin(array, index - 1));
         }
+        //This is how to loop from the start to the end instead
+        /*
+        public static int FindMin(int[] array, int index)
+        {
+            return index == array.Length - 1 ? array[index] : Math.Min(array[index], FindMin(array, index + 1));
+        }
+        */
+
         //Q5
         //Find Appearances
         public static int CountAppearances(int[] array, int num, int startingIndex = 0)
