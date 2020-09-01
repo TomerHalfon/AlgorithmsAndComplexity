@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SortsExamp
 {
@@ -22,19 +19,50 @@ namespace SortsExamp
             int[] res = new int[amount];
             for (int i = 0; i < amount; i++)
             {
-                res[i] = rng.Next(101);
+                res[i] = rng.Next(amount*2);
             }
             return res;
         }
-
-        static void Main()
+        static int GetNumFromUser(string msg)
         {
-            int size = 1000000;
+            int num;
+            Console.Write(msg);
+            while (!int.TryParse(Console.ReadLine(), out num))
+            {
+                Console.WriteLine("Invalid input!\nTry again...");
+            }
+            return num;
+        }
+
+        static void TestTheSpeedOfQuickSort()
+        {
+            int size = GetNumFromUser("How many numbers to sort => ");
             int[] array = GetArrayOfRngs(size);
             Console.WriteLine($"Sorting {size:n0} numbers");
-            Console.WriteLine($"PreSort => {DateTime.Now:mm:ss:fff}");
+            Console.WriteLine($"Starting the first sort...");
+
+            DateTime startTime = DateTime.Now;
             Sorts.QuickSort(array);
-            Console.WriteLine($"PostSort => {DateTime.Now:mm:ss:fff}");
+            TimeSpan firstSort = DateTime.Now - startTime;
+            Console.WriteLine($"Finished the first sort => {firstSort.TotalMilliseconds}(in milliseconds)");
+
+            Console.WriteLine("Starting the second sort");
+            startTime = DateTime.Now;
+            Sorts.ImprovedRearrangeQuickSort(array);
+            //Sorts.QuickSort(array);
+            TimeSpan secondSort = DateTime.Now - startTime;
+            Console.WriteLine($"Finished the second sort => {secondSort.TotalMilliseconds}(in milliseconds)");
+        }
+        static void Main()
+        {
+            // TestTheSpeedOfQuickSort();
+            int size = GetNumFromUser("How many numbers to sort => ");
+            int[] array = GetArrayOfRngs(size);
+            Console.WriteLine($"Sorting {size:n0} numbers");
+            Print(array);
+            Console.WriteLine();
+            Sorts.MergeSort(array);
+            Print(array);
         }
     }
 }
