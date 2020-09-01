@@ -18,8 +18,8 @@ namespace RecursionExercises
             //Console.WriteLine($"num = {num}, is prime {RecursiveMethods.IsPrime(num, 2)}");
             //Console.WriteLine($"sum of digits for {num} is {RecursiveMethods.GetSumOfDigits(num)}");
 
-            int[] array = { 1, 5, 8, 5, 5, 3, 2 };
-            Console.WriteLine($"The min is {RecursiveMethods.FindMin(array, array.Length)}");
+            //int[] array = { 1, 2, 3, 4, 5, 6, 7 };
+            //Console.WriteLine($"The min is {RecursiveMethods.FindMin(array, array.Length)}");
 
             //int numToSerch = 5;
             //Console.WriteLine($"{numToSerch} appers {RecursiveMethods.CountAppearances(array, numToSerch)}");

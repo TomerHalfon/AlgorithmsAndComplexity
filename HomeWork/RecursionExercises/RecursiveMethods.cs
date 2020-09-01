@@ -8,6 +8,7 @@ namespace RecursionExercises
 {
     class RecursiveMethods
     {
+        #region The First Exc
         //Q1
         //Check for Polindrom
         //This is a solution that will send a new string every time. this is heavy on the system.
@@ -64,6 +65,41 @@ namespace RecursionExercises
             }
             return array[startingIndex].Equals(num) ? 1 + CountAppearances(array, num, ++startingIndex) :
                 CountAppearances(array, num, ++startingIndex);
+        } 
+        #endregion
+
+        #region The Second Exc
+        public static bool IsSorted<T>(IList<T> array) where T : IComparable<T>
+        {
+            bool IsSorted(IList<T> arr, int index, T lastValue) =>
+                index >= arr.Count || arr[index].CompareTo(lastValue) > 0 && IsSorted(arr, index + 1, arr[index]);
+
+            return IsSorted(array, 0, default);
         }
+
+        public static void Jammble<T>(IList<T> array)
+        {
+            void JammbleInner(IList<T> collection, int index)
+            {
+                if (index >= collection.Count / 2)
+                {
+                    return;
+                }
+                Console.WriteLine($"{collection[index]} {collection[collection.Count - 1 - index]}");
+                JammbleInner(collection, index + 1);
+            }
+            JammbleInner(array, 0);
+        }
+
+        public static void PrintCharsByAmount(int num)
+        {
+            if (num <= 0) return;
+
+            char ch = num % 2 == 0 ? '#' : '%';
+            Console.Write(ch);
+
+            PrintCharsByAmount(num - 1);
+        } 
+        #endregion
     }
 }
