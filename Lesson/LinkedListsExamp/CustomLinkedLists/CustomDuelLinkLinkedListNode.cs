@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace LinkedListsExamp.CustomLinkedLists
 {
-    class CustomLinkedListNode<T>
+    class CustomDuelLinkLinkedListNode<T>
     {
         public T Data { get; set; }
-        public CustomLinkedListNode<T> Next { get; set; }
-        public CustomLinkedListNode<T> Previous { get; set; }
+        public CustomDuelLinkLinkedListNode<T> Next { get; set; }
+        public CustomDuelLinkLinkedListNode<T> Previous { get; set; }
 
-        public CustomLinkedListNode(T data)
+        public CustomDuelLinkLinkedListNode(T data)
         {
             Data = data;
         }

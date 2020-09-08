@@ -7,31 +7,50 @@ namespace LinkedListsExamp
 {
     class Program
     {
-        static void Main(string[] args)
+       static string [] GetWords(int amount)
+        {
+            string[] res = new string[amount];
+            for (int i = 0; i < amount; i++)
+            {
+                Console.Write($"Add Word {i + 1}: ");
+                res[i] = Console.ReadLine();
+            }
+            return res;
+        }
+       static void TestCustomCircularDualLinkLinkedList()
         {
             CustomCircularDualLinkLinkedList<string> customLinkedList = new CustomCircularDualLinkLinkedList<string>();
-            Console.WriteLine($"The last: {customLinkedList.Last}");
-            customLinkedList.AddFirst("Tomer");
-            customLinkedList.AddFirst("Me");
-            customLinkedList.AddFirst("It's");
-            customLinkedList.AddFirst("World");
-            customLinkedList.AddFirst("Hello");
+            Console.WriteLine("Created a new Circular Dual Link LinkedList");
+            Console.WriteLine("Adding Words by AddFirst(word)");
+            foreach (string word in GetWords(3))
+            {
+                customLinkedList.AddFirst(word);
+            }
+            Console.WriteLine("The Words:");
             foreach (var item in customLinkedList)
             {
-                Console.WriteLine(item);
+                Console.Write($"{item} ");
             }
-            customLinkedList.RemoveFirst(out string savedFirstValue);
-            Console.WriteLine($"Deleted {savedFirstValue}");
+            Console.WriteLine("\nAdding Words by AddLast(word)");
+            foreach (string word in GetWords(3))
+            {
+                customLinkedList.AddLast(word);
+            }
+            Console.WriteLine("The Words:");
             foreach (var item in customLinkedList)
             {
-                Console.WriteLine(item);
+                Console.Write($"{item} ");
             }
-            customLinkedList.AddLast("Last");
-            foreach (var item in customLinkedList)
-            {
-                Console.WriteLine(item);
-            }
-            Console.WriteLine($"The last: {customLinkedList.Last.Data}");
+            Console.WriteLine();
+            Console.WriteLine($"The last word is {customLinkedList.Last.Data}");
+            Console.WriteLine("Removing last");
+            customLinkedList.RemoveLast(out string savedlast);
+            Console.WriteLine($"Removed {savedlast}");
+            Console.WriteLine($"The last word is {customLinkedList.Last.Data}");
+        }
+        static void Main(string[] args)
+        {
+            TestCustomCircularDualLinkLinkedList();
         }
     }
 }

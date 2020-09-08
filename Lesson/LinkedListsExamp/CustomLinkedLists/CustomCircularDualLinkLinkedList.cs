@@ -13,16 +13,16 @@ namespace LinkedListsExamp.CustomLinkedLists
     /// <typeparam name="T">The type of the node's data</typeparam>
     class CustomCircularDualLinkLinkedList<T>: IEnumerable<T>
     {
-        CustomLinkedListNode<T> First { get; set; }
+        CustomDuelLinkLinkedListNode<T> First { get; set; }
         private int _count;
 
         public int Count => _count;
-        public CustomLinkedListNode<T> Last => First?.Previous;
+        public CustomDuelLinkLinkedListNode<T> Last => First?.Previous;
         public CustomCircularDualLinkLinkedList(T start) => AddFirst(start);
         public CustomCircularDualLinkLinkedList() { }
         public void AddFirst(T data)
         {
-            CustomLinkedListNode<T> newFirst = new CustomLinkedListNode<T>(data);
+            CustomDuelLinkLinkedListNode<T> newFirst = new CustomDuelLinkLinkedListNode<T>(data);
             if (First is null)
             {
                 newFirst.Next = newFirst;
@@ -40,7 +40,7 @@ namespace LinkedListsExamp.CustomLinkedLists
         }
         public void AddLast(T data)
         {
-            CustomLinkedListNode<T> newLast = new CustomLinkedListNode<T>(data)
+            CustomDuelLinkLinkedListNode<T> newLast = new CustomDuelLinkLinkedListNode<T>(data)
             {
                 Next = First,
                 Previous = First.Previous 
@@ -65,6 +65,15 @@ namespace LinkedListsExamp.CustomLinkedLists
             _count--;
             return true;
         }
+        public bool RemoveLast(out T savedLastValue)
+        {
+            savedLastValue = Last.Data;
+            if (First is null) return false;
+
+            savedLastValue = Last.Data;
+            First.Previous = Last.Previous;
+            return true;
+        }
         #region IEnumrable
         public IEnumerator<T> GetEnumerator() => new CustomLinkedListEnumerator(this);
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
@@ -73,7 +82,7 @@ namespace LinkedListsExamp.CustomLinkedLists
         class CustomLinkedListEnumerator : IEnumerator<T>
         {
             CustomCircularDualLinkLinkedList<T> _list;
-            CustomLinkedListNode<T> _node;
+            CustomDuelLinkLinkedListNode<T> _node;
             int _index;
             public T Current { get; private set; }
             public CustomLinkedListEnumerator(CustomCircularDualLinkLinkedList<T> list)
@@ -99,7 +108,7 @@ namespace LinkedListsExamp.CustomLinkedLists
                 Current = _node.Data;
                 _node = _node.Next;
                 if (_node == _list.First)
-                    _node = default(CustomLinkedListNode<T>);
+                    _node = default(CustomDuelLinkLinkedListNode<T>);
                 return true;
             }
 

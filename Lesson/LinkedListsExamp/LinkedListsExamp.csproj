@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomLinkedLists\CustomCircularDualLinkLinkedList.cs" />
-    <Compile Include="CustomLinkedLists\CustomLinkedListNode.cs" />
+    <Compile Include="CustomLinkedLists\CustomDuelLinkLinkedListNode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
