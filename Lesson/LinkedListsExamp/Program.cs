@@ -1,10 +1,7 @@
 ﻿//Relevent Doc: https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.linkedlist-1?view=netcore-3.1
 using System;
-using LinkedListsExamp.CustomLinkedList;
+using LinkedListsExamp.CustomLinkedLists;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LinkedListsExamp
 {
@@ -12,7 +9,8 @@ namespace LinkedListsExamp
     {
         static void Main(string[] args)
         {
-            CustomLinkedList<string> customLinkedList = new CustomLinkedList<string>();
+            CustomCircularDualLinkLinkedList<string> customLinkedList = new CustomCircularDualLinkLinkedList<string>();
+            Console.WriteLine($"The last: {customLinkedList.Last}");
             customLinkedList.AddFirst("Tomer");
             customLinkedList.AddFirst("Me");
             customLinkedList.AddFirst("It's");
@@ -28,6 +26,12 @@ namespace LinkedListsExamp
             {
                 Console.WriteLine(item);
             }
+            customLinkedList.AddLast("Last");
+            foreach (var item in customLinkedList)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine($"The last: {customLinkedList.Last.Data}");
         }
     }
 }

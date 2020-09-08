@@ -43,8 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomLinkedList\CustomLinkedList.cs" />
-    <Compile Include="CustomLinkedList\CustomLinkedListNode.cs" />
+    <Compile Include="CustomLinkedLists\CustomCircularDualLinkLinkedList.cs" />
+    <Compile Include="CustomLinkedLists\CustomLinkedListNode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
