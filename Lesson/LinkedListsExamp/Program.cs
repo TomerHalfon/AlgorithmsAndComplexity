@@ -44,9 +44,14 @@ namespace LinkedListsExamp
             Console.WriteLine();
             Console.WriteLine($"The last word is {customLinkedList.Last.Data}");
             Console.WriteLine("Removing last");
-            customLinkedList.RemoveLast(out string savedlast);
-            Console.WriteLine($"Removed {savedlast}");
+            customLinkedList.RemoveLast(out string savedLast);
+            Console.WriteLine($"Removed {savedLast}");
             Console.WriteLine($"The last word is {customLinkedList.Last.Data}");
+            Console.WriteLine($"The First Word is {customLinkedList.First.Data}");
+            Console.WriteLine("Removing First");
+            customLinkedList.RemoveFirst(out string savedFirst);
+            Console.WriteLine($"Removed {savedFirst}");
+            Console.WriteLine($"The First word is {customLinkedList.First.Data}");
         }
         static void Main(string[] args)
         {

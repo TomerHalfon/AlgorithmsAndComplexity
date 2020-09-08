@@ -13,7 +13,7 @@ namespace LinkedListsExamp.CustomLinkedLists
     /// <typeparam name="T">The type of the node's data</typeparam>
     class CustomCircularDualLinkLinkedList<T>: IEnumerable<T>
     {
-        CustomDuelLinkLinkedListNode<T> First { get; set; }
+        public CustomDuelLinkLinkedListNode<T> First { get; private set; }
         private int _count;
 
         public int Count => _count;
@@ -31,8 +31,8 @@ namespace LinkedListsExamp.CustomLinkedLists
             else
             {
                 newFirst.Next = First;
-                newFirst.Previous = First.Previous;
-                First.Previous.Next = newFirst;
+                newFirst.Previous = Last;
+                Last.Next = newFirst;
                 First.Previous = newFirst;
             }
             First = newFirst;
@@ -43,9 +43,9 @@ namespace LinkedListsExamp.CustomLinkedLists
             CustomDuelLinkLinkedListNode<T> newLast = new CustomDuelLinkLinkedListNode<T>(data)
             {
                 Next = First,
-                Previous = First.Previous 
+                Previous = Last 
             };
-            First.Previous.Next = newLast;
+            Last.Next = newLast;
             First.Previous = newLast;
             _count++;
         }
@@ -58,8 +58,8 @@ namespace LinkedListsExamp.CustomLinkedLists
             if (First.Next == First) First = null;
             else
             {
-                First.Next.Previous = First.Previous;
-                First.Previous.Next = First.Next;
+                First.Next.Previous = Last;
+                Last.Next = First.Next;
                 if (First == First) First = First.Next;
             }
             _count--;
@@ -74,7 +74,7 @@ namespace LinkedListsExamp.CustomLinkedLists
             First.Previous = Last.Previous;
             return true;
         }
-        #region IEnumrable
+        #region IEnumerable
         public IEnumerator<T> GetEnumerator() => new CustomLinkedListEnumerator(this);
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
