@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{020849E8-C627-48FF-808E-57E199CCE340}</ProjectGuid>
+    <ProjectGuid>{5EE0AE64-5784-4DB3-B57F-329A2EA72601}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>LinkedListsExamp</RootNamespace>
-    <AssemblyName>LinkedListsExamp</AssemblyName>
+    <RootNamespace>StackExamp</RootNamespace>
+    <AssemblyName>StackExamp</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,14 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassLinkedList\LinkedList.cs" />
-    <Compile Include="CustomCircularDuelLinkLinkedList\CustomCircularDualLinkLinkedList.cs" />
-    <Compile Include="CustomCircularDuelLinkLinkedList\CustomDuelLinkLinkedListNode.cs" />
+    <Compile Include="CustomStack.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LinkedListsExamp\LinkedListsExamp.csproj">
+      <Project>{020849e8-c627-48ff-808e-57e199cce340}</Project>
+      <Name>LinkedListsExamp</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

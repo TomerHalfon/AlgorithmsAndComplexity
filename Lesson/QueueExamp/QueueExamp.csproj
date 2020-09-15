@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{020849E8-C627-48FF-808E-57E199CCE340}</ProjectGuid>
+    <ProjectGuid>{87D1173C-2D56-4B89-95C7-9E32CE32DA85}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>LinkedListsExamp</RootNamespace>
-    <AssemblyName>LinkedListsExamp</AssemblyName>
+    <RootNamespace>QueueExamp</RootNamespace>
+    <AssemblyName>QueueExamp</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,9 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassLinkedList\LinkedList.cs" />
-    <Compile Include="CustomCircularDuelLinkLinkedList\CustomCircularDualLinkLinkedList.cs" />
-    <Compile Include="CustomCircularDuelLinkLinkedList\CustomDuelLinkLinkedListNode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,13 +1,13 @@
 ﻿//Relevent Doc: https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.linkedlist-1?view=netcore-3.1
 using System;
 using LinkedListsExamp.CustomLinkedLists;
-using System.Collections.Generic;
+using LinkedListsExamp.ClassLinkedList;
 
 namespace LinkedListsExamp
 {
     class Program
     {
-       static string [] GetWords(int amount)
+        static string[] GetWords(int amount)
         {
             string[] res = new string[amount];
             for (int i = 0; i < amount; i++)
@@ -17,7 +17,7 @@ namespace LinkedListsExamp
             }
             return res;
         }
-       static void TestCustomCircularDualLinkLinkedList()
+        static void TestCustomCircularDualLinkLinkedList()
         {
             CustomCircularDualLinkLinkedList<string> customLinkedList = new CustomCircularDualLinkLinkedList<string>();
             Console.WriteLine("Created a new Circular Dual Link LinkedList");
@@ -53,9 +53,22 @@ namespace LinkedListsExamp
             Console.WriteLine($"Removed {savedFirst}");
             Console.WriteLine($"The First word is {customLinkedList.First.Data}");
         }
+        static void TestClassLinkedList()
+        {
+            LinkedList<string> list = new LinkedList<string>();
+            list.AddLast("hello");
+            list.AddLast("world");
+            list.AddLast("it's");
+            list.AddLast("me");
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+            }
+        }
         static void Main(string[] args)
         {
-            TestCustomCircularDualLinkLinkedList();
+            //TestCustomCircularDualLinkLinkedList();
+            TestClassLinkedList();
         }
     }
 }
