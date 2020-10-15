@@ -27,7 +27,7 @@ namespace QueueAssigment
             }
             Console.WriteLine();
         }
-        static void TestQueue(CustomQueue.ArrayQueue<int> queue)
+        static void TestQueue(ArrayQueue<int> queue)
         {
             for (int i = 0; i < queue.Capacity; i++)
             {
@@ -49,7 +49,7 @@ namespace QueueAssigment
         }
         static void Main(string[] args)
         {
-            CustomQueue.ArrayQueue<int> queue = new CustomQueue.ArrayQueue<int>(GetNum("Enter Queue Capacity => "));
+            ArrayQueue<int> queue = new ArrayQueue<int>(GetNum("Enter Queue Capacity => "));
             Console.WriteLine();
             TestQueue(queue);
         }

@@ -68,7 +68,23 @@ namespace LinkedListsExamp
         static void Main(string[] args)
         {
             //TestCustomCircularDualLinkLinkedList();
-            TestClassLinkedList();
+            //TestClassLinkedList();
+            int number = 10;
+            UpdateNumber(number, out number);
+            Console.WriteLine(number);
         }
+        static void UpdateNumber(int num, out int res)
+        {
+            res = num + 10;
+        }
+        static void UpdateIndex(ref int index, int step) => index += step;
+        //static void UpdateNumber(int num)
+        //{
+
+        //}
+        //static void UpdateNumber(int num)
+        //{
+
+        //}
     }
 }

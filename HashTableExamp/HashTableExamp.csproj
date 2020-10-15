@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{87D1173C-2D56-4B89-95C7-9E32CE32DA85}</ProjectGuid>
+    <ProjectGuid>{A8921A08-DA1F-4731-AA0E-CBC3037F07D7}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>QueueExamp</RootNamespace>
-    <AssemblyName>QueueExamp</AssemblyName>
+    <RootNamespace>HashTableExamp</RootNamespace>
+    <AssemblyName>HashTableExamp</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomQueue.cs" />
+    <Compile Include="HashTable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

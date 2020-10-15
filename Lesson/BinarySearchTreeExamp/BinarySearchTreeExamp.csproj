@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{87D1173C-2D56-4B89-95C7-9E32CE32DA85}</ProjectGuid>
+    <ProjectGuid>{A2B54324-976E-4EAC-9B46-80E1C247007F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>QueueExamp</RootNamespace>
-    <AssemblyName>QueueExamp</AssemblyName>
+    <RootNamespace>BinarySearchTreeExamp</RootNamespace>
+    <AssemblyName>BinarySearchTreeExamp</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomQueue.cs" />
+    <Compile Include="BinarySearchTree.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
